@@ -16,12 +16,13 @@ import { filtersReducer } from './filtersSlice';
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
-  filters: filtersReducer,
+  filter: filtersReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['filter'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

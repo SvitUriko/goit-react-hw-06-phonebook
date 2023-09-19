@@ -8,9 +8,10 @@ import {
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
+import { selectContacts } from 'redux/selectors';
 
 export const ContactForm = () => {
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(selectContacts);
   console.log('Contacts:', contacts);
 
   const dispatch = useDispatch();

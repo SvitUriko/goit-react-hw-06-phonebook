@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { Input } from './Filter.styled';
-import { setFilters } from 'redux/filtersSlice';
+import { setFilter } from 'redux/filtersSlice';
 
-export const Filter = ({ name }) => {
+export const Filter = () => {
   const dispatch = useDispatch();
 
   return (
@@ -11,8 +11,8 @@ export const Filter = ({ name }) => {
       <Input
         type="text"
         name="filter"
-        onChange={() => {
-          dispatch(setFilters(name));
+        onChange={evt => {
+          dispatch(setFilter(evt.target.value));
         }}
       />
     </>
